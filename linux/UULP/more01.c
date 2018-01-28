@@ -2,7 +2,7 @@
  *  read and print 24 lines then pause for a few special commands
  */
 
-$include <stdio.h>
+#include <stdio.h>
 
 #define PAGELEN 24
 #define LINELEN 512
@@ -26,7 +26,7 @@ int main( int ac , char *av[] )
         exit(1);
   return 0;
 }
-void do_more( FILE *FP )
+void do_more( FILE *fp )
 /*
  * read PAGELEN lines, then call the see_more() for furthur instructions
  */
@@ -38,7 +38,7 @@ void do_more( FILE *FP )
   while ( fgets( line, LINELEN, fp ) ){
     if ( num_of_lines == PAGELEN ) {
       reply = see_more();
-      if ( reply = 0 )
+      if ( reply == 0 )
         break;
       num_of_lines -= reply;
     }
@@ -55,7 +55,7 @@ int see_more()
    */
 {
   int c;
-  printf("\033[7m more? \033[m*);
+  printf("\033[7m more? \033[m");
   while( (c=getchar()) != EOF )
   {
     if ( c == 'q')
