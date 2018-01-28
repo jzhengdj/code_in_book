@@ -2,6 +2,26 @@
  *  read and print 24 lines then pause for a few special commands
  */
 
+//things to learn from this program?
+//
+//1. how to use file pointer? like system calls.
+//
+//  FILE *fp;
+//  if ( (fp = fopen( *++av, "r" )) != NULL )
+//  {
+//    do_more(fp);
+//  }
+//
+//2. how read from file
+//
+//  char line(LINELEN);
+//  fgets( line, LINELEN, fp )
+//
+//3. how do unix program print info on screen.
+//
+//  if ( fputs (line, stdout ) == EOF )
+//    exit(1);
+//
 #include <stdio.h>
 
 #define PAGELEN 24
